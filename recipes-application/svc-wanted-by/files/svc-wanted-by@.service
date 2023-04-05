@@ -1,0 +1,11 @@
+[Unit]
+Description="Test WantedBy service %i"
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/echo "Hello from WantedBy service (instance %i)"
+ExecStop=/bin/echo "Hello from Wantedby service (instance %i)"
+
+[Install]
+WantedBy=svc-wants@%i.service

@@ -1,0 +1,11 @@
+[Unit]
+Description="Test Wants service %i"
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/echo "Hello from Wants service (instance %i)"
+ExecStop=/bin/echo "Hello from Wants service (instance %i)"
+
+[Install]
+WantedBy=multi-user.target
