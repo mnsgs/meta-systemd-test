@@ -12,7 +12,7 @@ SYSTEMD_SERVICE:${BPN} = "\
 
 do_install:append() {
     install -d ${D}${systemd_system_unitdir}
-    install -m 0644 ${WORKDIR}/${BPN}@.service ${D}${systemd_system_unitdir}
+    install -m 0644 ${UNPACKDIR}/${BPN}@.service ${D}${systemd_system_unitdir}
 }
 
 FILES:${PN} += "${systemd_system_unitdir}"
